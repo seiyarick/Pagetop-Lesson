@@ -1,23 +1,15 @@
-// オプションを指定してSkipprの実行
-$(".theTarget").skippr({
-  // スライドショーの変化（"fade" or "slide"）
-  transition : 'fade',
-  // 変化にかかる時間（ミリ秒）
-  speed : 1000,
-  // easingの種類
-  easing : 'easeOutQuart',
-  // ナビゲーションの形（"block" or "bubble"）
-  navType : 'bubble',
-  // 子要素の種類（"div" or "img"）
-  childrenElementType : 'div',
-  // ナビゲーション矢印の表示（trueで表示）
-  arrows : true,
-  // スライドショーの自動再生（falseで自動再生なし）
-  autoPlay : false,
-  // 自動再生時のスライド切替間隔（ミリ秒）
-  autoPlayDuration : 5000,
-  // キーボードの矢印キーによるスライド送りの設定（trueで有効）
-  keyboardOnAlways : true,
-  // 1枚目のスライド表示時に戻る矢印を表示するかどうか [false]:矢印を隠さない [true]:矢印を隠す
-  hidePrevious : false
+$(function(){
+  // #back内のaタグがクリックされた時の処理
+  $('#back a').on('click',function(event){
+    // $('#id名 要素名')
+    // id="back"内のaタグがクリックされたとき
+    // イベント発生時に行われる処理
+    $('body,html').animate({
+      scrollTop:0
+    },800);
+    // $('セレクタ名').animate({
+    //   変化対象のプロパティ名:変化値
+    // },アニメーションの動作時間);
+    event.preventDefault();
+  });
 });
